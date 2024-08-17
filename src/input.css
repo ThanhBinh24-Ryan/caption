@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.flex .btn_header{
+    border-radius: 17px;
+    border: 1px solid gray;
+}
+/* Cài đặt cơ bản cho menu */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  
+  }
+  
+  .menu ul li {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown chính */
+  .menu .dropdown-menus {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    margin-top: 5px;
+    transition: 3s;
+  }
+  
+  /* Hiển thị dropdown khi hover */
+  .menu .dropdown:hover > .dropdown-menus {
+    display: block;
+  }
+  
+  /* Cài đặt cho dropdown lồng vào */
+  .menu .dropdowns .dropdown-menus.nested {
+    top: 0;
+    left: 100%;
+    margin-top: 0;
+    margin-left: 1px;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  .menu .dropdowns:hover > .dropdown-menus.nested {
+    display: block;
+  }
+  
+  /* Style cho các mục trong menu */
+  .menu .dropdown-menus li {
+    padding: 12px 16px;
+  }
+  
+  .menu .dropdown-menus li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .menu .dropdown-menus li a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Style caret */
+  .caret {
+    font-size: 0.7em;
+    margin-left: 5px;
+  }
+  
+  .menu .dropdown a {
+    display: flex;
+    align-items: center;
+  }
+  
