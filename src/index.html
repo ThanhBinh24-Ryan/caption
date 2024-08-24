@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body>
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+  <body  class="light-theme">
+    <nav
+      class="navbar_1  border-none dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 bg-white dark:border-gray-600"
+    >
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
@@ -25,18 +29,20 @@
           ></span>
         </a>
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            class="btn_header px-4 py-2 text-black-500 mr-2"
-          >
-            Sign In
-          </button>
-          <button
-            type="button"
-            class="btn_header text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Sign Up
-          </button>
+          <div class="moon">
+            <i class="fa-regular fa-sun theme-toggle"></i>
+          </div>
+          <div class="mr-6">
+           
+            <a href="#" class="btn_header px-6 py-2 mr-2 font-bold"> Sign In </a>
+
+            <button
+              type="button"
+              class="btn_header text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Sign Up
+            </button>
+          </div>
           <button
             data-collapse-toggle="navbar-cta"
             type="button"
@@ -63,16 +69,16 @@
           </button>
         </div>
         <div
-          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          class="mr-10 items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-cta"
         >
           <ul
-            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
           >
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
+                class="header_menus opacity-50 block py-3 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500"
                 aria-current="page"
                 >Home</a
               >
@@ -80,8 +86,8 @@
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >About</a
+                class="header_menus opacity-50 block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Features</a
               >
             </li>
             <li>
@@ -90,9 +96,9 @@
                   <li class="dropdown">
                     <a
                       href="#"
-                      class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                      class="header_menus opacity-50 block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                     >
-                      Dropdown <span class="caret">▼</span>
+                      Pages<span class="caret ">v</span>
                     </a>
                     <ul class="dropdown-menus">
                       <li><a href="#">Blog Grid </a></li>
@@ -109,15 +115,704 @@
             <li>
               <a
                 href="#"
-                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >Contact</a
+                class="header_menus opacity-50 block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Support</a
               >
             </li>
           </ul>
         </div>
       </div>
     </nav>
+      <section>
+        <button id="scrollButton" class="scroll-button ">
+          ^
+      </button>
+      
+      </section>
+    <section>
+      <div class="show">
+        <div class="lelf_to_right">
+          <div class="ml-9">
+            <h1 class="h1_show">
+              We specialize in UI/UX, Web Development, Digital Marketing.
+            </h1>
+            <br />
+            <p class="opacity-50 mt-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              fringilla magna mauris. Nulla fermentum viverra sem eu rhoncus
+              consequat varius nisi quis, posuere magna.
+            </p>
+          </div>
+          <br />
 
+          <br />
+          <div class="flex">
+            <a href="#" class="get_started px-6 py-3 text-white font_bold"
+              >Get Started Now</a
+            >
+            <span class="ml-4">
+              <a href="#" class="call_phone font-bold-700 opacity-90 size-8">
+                Call us (0123) 456 – 789
+              </a>
+              <br />
+              <span class="opacity-50">For any question or concern</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="image-container">
+          <div>
+            <img src="../images/shape-04.svg" alt="shape" class="shape_4" />
+          </div>
+          <div><img src="../images/hero.png" alt="Woman" class="hero_4" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="">
+        <div class="">
+          <div class="clasa flex">
+            <div class="iconn flex">
+              <div class="animate_top  flex">
+                <div class="icon_1 ">
+                  <img src="../images/icon-01.svg" alt="Icon" class="" />
+                </div>
+                <div>
+                  <h4 class="h4_iconn font-bold">24/7 Support</h4>
+                  <p class="h4_icon">
+                    Lorem ipsum dolor sit amet conse adipiscing elit.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="iconn flex animate_top kn to/3 tc cg oq">
+              <div class="icon_2 tc wf xf cf ae cd rg nh">
+                <img src="../images/icon-02.svg" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="h4_iconn font-bold">Take Ownership</h4>
+                <p class="h4_icon">
+                  Lorem ipsum dolor sit amet conse adipiscing elit.
+                </p>
+              </div>
+            </div>
+
+            <div class="iconn flex">
+              <div class="icon_3">
+                <img src="../images/icon-03.svg" alt="Icon" />
+              </div>
+              <div>
+                <h4 class="h4_iconn font-bold">Team Work</h4>
+                <p class="h4_icon">
+                  Lorem ipsum dolor sit amet conse adipiscing elit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- </section>       -->
+    <section class="study">
+      <div class="">
+        <div class="flex">
+          <div class="nooo_o flex ml-10">
+            <div class="animate_left">
+              <img src="../images/shape-05.svg" alt="Shape" class="shape_6" />
+              <img src="../images/about-01.png" alt="About" class="nuatron" />
+              <img
+                src="../images/about-02.png"
+                alt="About"
+                class="mt-7 nuatron"
+              />
+            </div>
+            <div class="ml-7">
+              <img
+                src="../images/shape-06.svg"
+                alt="Shape"
+                class="mb-7 nuatron"
+              />
+              <img src="../images/about-03.png" alt="About" class="nuatron" />
+              <img src="../images/shape-07.svg" alt="Shape" class="nuatrons" />
+            </div>
+          </div>
+
+          <div class="animate_right">
+            <h4 class="why_choise">Why Choose Us</h4>
+            <h2 class="mt-7 we_make">
+              We Make Our customers happy by giving Best services.
+            </h2>
+
+            <p class="mt-3 opacity-50 size-xxl">
+              It is a long established fact that a reader will be distracted by
+              <br />
+              the readable content of a page when looking at its layout. The
+              point of <br />
+              using Lorem Ipsum.
+            </p>
+            <a
+              href="https://www.youtube.com/watch?v=xcJtL7QggTI"
+              data-fslightbox
+              class="flex mt-7"
+            >
+              <span class="icon-wrapper">
+                <span class="ripple"></span>
+                <img
+                  src="../images/icon-play.svg"
+                  alt="Play"
+                  class="icon_play"
+                />
+            </span>
+              <span class="ml-7 mt-3">SEE HOW WE WORK</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- --------------------------------- -->
+    <section class="team_three pb-10 ">
+      <div class="py-10 team_and_picture">
+        <div>
+          <img src="../images/shape-10.svg" alt="" class="circle">
+        </div>
+        <div class="text-center meet_with">
+          <h1>Meet With Our Creative Dedicated Team</h1>
+        </div>
+        <div class="flex text-center dolor_sit py-7">
+          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros. Donec vitae <br> tortor lacus. Phasellus aliquam ante in maximus.</h2>
+          <img src="../images/shape-11.svg" alt="" class="tamgiac">
+        </div>
+      </div>
+    
+      <div class="people_1 flex justify-between px-10 md:680">
+        <div class="people">
+          <div class="image-container">
+            <img src="../images/team-01.png" alt="">
+            <div class="overlay">
+              <div class="social-icons">
+                <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <h1 class="h1_size">Olivia Andrium
+           </h1>
+            <h2 class="h2_size opacity-50">   Product Manager</h2>
+          </div>
+        </div>
+        
+        <div class="people">
+          <div class="image-container">
+            <img src="../images/team-02.png" alt="">
+            <div class="overlay">
+              <div class="social-icons">
+                <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <h1 class="h1_size">Jemse Kemorun</h1>
+            <h2 class="h2_size opacity-50">Product Designer</h2>
+          </div>
+        </div>
+        
+        <div class="people">
+          <div class="image-container">
+            <img src="../images/team-03.png" alt="">
+            <div class="overlay">
+              <div class="social-icons">
+                <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="icon"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-8">
+            <h1 class="h1_size">Avi Pestarica
+             </h1>
+            <h2 class="h2_size opacity-50"> Web Designer</h2>
+          </div>
+        </div>
+        
+      </div>
+      
+      
+         </section>
+    <!-- ---------------------------------------       -->
+    <section class="">
+      <div class="we_ofer text-center py-9">
+        <h1 class="h1_offer font-bold pb-4">
+          We Offer The Best Quality Service for You
+        </h1>
+        <h3 class="h3_offer opacity-50">
+          Lorem ipsum dolor sit amet ue illo dolorum, optio tempora expedita
+          fugiat necessitatibus <br />
+          ipsam suscipit tempore qui accusamus est perferendis commodi.
+        </h3>
+      </div>
+    </section>
+
+ 
+    
+    </div>
+
+
+    <section>
+      <div class=" pp_1 grid grid-cols-3 md:grid-cols-3 gap-4 mt-10 px-14 pl-20">
+        <div>
+          <img class="" src="../images/icon-04.svg" alt="" />
+          <h1 class="py-4 font-bold h1_grid">Crafted for Startups</h1>
+          <h3 class="h3_grid opacity-50 mr-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </h3>
+        </div>
+        <div>
+          <img class="" src="../images/icon-05.svg" alt="" />
+          <h1 class="py-4 font-bold h1_grid">High-quality Design</h1>
+          <h3 class="h3_grid opacity-50 mr-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </h3>
+        </div>
+        <div>
+          <img class="" src="../images/icon-06.svg" alt="" />
+          <h1 class="py-4 font-bold h1_grid">Speed Optimized</h1>
+          <h3 class="h3_grid opacity-50 mr-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </h3>
+        </div>
+        <div>
+          <img class="" src="../images/icon-07.svg" alt="" />
+          <h1 class="py-4 font-bold h1_grid">Fully Customizable</h1>
+          <h3 class="h3_grid opacity-50 mr-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </h3>
+        </div>
+        <div>
+          <img class="" src="../images/icon-05.svg" alt="" />
+          <h1 class="py-4 font-bold h1_grid">Regular Updates</h1>
+          <h3 class="h3_grid opacity-50 mr-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </h3>
+        </div>
+        <div>
+          <img class="" src="../images/icon-06.svg" alt="" />
+          <h1 class="py-4 font-bold h1_grid">Crafted for Startups</h1>
+          <h3 class="h3_grid opacity-50 mr-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+            convallis tortor.
+          </h3>
+        </div>
+      </div>
+    </section>
+    <!-- ------------------------------------------------------------------------- -->
+    <!-- <section>
+
+      <div class="great text-center mt-8">
+        <div class="pc_great flex text-center align-middle ml-76 pt-8 mb-11">
+          <img src="../images/shape-06.svg" alt="" class="" />
+          <h1 class="h1_great">We Offer Great Affordable Premium Prices.</h1>
+        </div>
+        <div>
+          <h3 class="opacity-30 h3_it">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a <br />
+            page when looking at its layout. The point of using.
+          </h3>
+        </div>
+        <div class="btn_pc text-center">
+          <h2>
+            <label id="price-toggle-label" class="inline-flex items-center cursor-pointer my-7 label_1">
+              <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 mr-2">Checked toggle</span>
+              <input id="toggle-price" type="checkbox" value="" class="sr-only peer" checked />
+              <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+              <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Checked toggle</span>
+              <img src="../images/shape-03.svg" alt="" class="" />
+          </label>
+          
+          <div class="grid_3picture pb-11 px-11">
+              <div class="flex justify-between">
+                  <div class="">
+                      <div class="text-center money_bill">
+                          <h1>Started</h1>
+                          <br>
+                          <h3 id="price1" class="flex ml-14">
+                              <p class="dolor">$29</p><span class="opacity-50 mt-5">/per month</span>
+                          </h3>
+                          <br>
+                          <h2 class="opacity-50">No credit card required</h2>
+                          <br>
+                          <button class="px-10 py-3 try_for1 mb-5 text-white">Try for free</button>
+                          <p class="opacity-50">400 GB Storage</p>
+                          <p class="p-3 opacity-50">Unlimited Photos & Videos</p>
+                          <p class="pb-10 opacity-50">Exclusive Support</p>
+                          <p>7-day free trial</p>
+                      </div>
+                  </div>
+          
+                  <div class="">
+                      <div class="text-center money_bill">
+                          <h1>Growth Plan</h1>
+                          <br>
+                          <h3 id="price2" class="flex ml-14">
+                              <p class="dolor">$59</p><span class="opacity-50 mt-5">/per month</span>
+                          </h3>
+                          <br>
+                          <h2 class="opacity-50">No credit card required</h2>
+                          <br>
+                          <button class="px-10 py-3 try_for2 mb-5 text-white">Try for free</button>
+                          <p class="opacity-50">400 GB Storage</p>
+                          <p class="p-3 opacity-50">Unlimited Photos & Videos</p>
+                          <p class="pb-10 opacity-50">Exclusive Support</p>
+                          <p>7-day free trial</p>
+                      </div>
+                  </div>
+          
+                  <div class="">
+                      <div class="text-center money_bill">
+                          <h1>Business</h1>
+                          <br>
+                          <h3 id="price3" class="flex ml-14">
+                              <p class="dolor">$139</p><span class="opacity-50 mt-5">/per month</span>
+                          </h3>
+                          <br>
+                          <h2 class="opacity-50">No credit card required</h2>
+                          <br>
+                          <button class="px-10 py-3 try_for1 mb-5 text-white">Try for free</button>
+                          <p class="opacity-50">400 GB Storage</p>
+                          <p class="p-3 opacity-50">Unlimited Photos & Videos</p>
+                          <p class="pb-10 opacity-50">Exclusive Support</p>
+                          <p>7-day free trial</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+   
+          
+    </section> -->
+    <!-- ------------------------------------ -->
+     <section>
+      <section>
+        <div class="great text-center mt-8">
+            <div class="pc_great flex text-center align-middle ml-76 pt-8 mb-11">
+                <img src="../images/shape-06.svg" alt="" class="" />
+                <h1 class="h1_great">We Offer Great Affordable Premium Prices.</h1>
+            </div>
+            <div>
+                <h3 class="opacity-30 h3_it">
+                    It is a long established fact that a reader will be distracted by
+                    the readable content of a <br />
+                    page when looking at its layout. The point of using.
+                </h3>
+            </div>
+            <div class="btn_pc text-center">
+                <h2>
+                    <label id="price-toggle-label" class="inline-flex items-center cursor-pointer my-7 label_1">
+                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300 mr-2">Checked toggle</span>
+                        <input id="toggle-price" type="checkbox" value="" class="sr-only peer" />
+                        <div class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                        <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Checked toggle</span>
+                        <img src="../images/shape-03.svg" alt="" class="" />
+                    </label>
+                </h2>
+            </div>
+            <div class="grid_3picture pb-11 px-11">
+                <div class="flex justify-between">
+                    <div class="">
+                        <div class="text-center money_bill">
+                            <h1>Started</h1>
+                            <br>
+                            <h3 id="price1" class="flex ml-14">
+                                <p class="dolor">$29</p><span class="opacity-50 mt-5">/per month</span>
+                            </h3>
+                            <br>
+                            <h2 class="opacity-50">No credit card required</h2>
+                            <br>
+                            <button class="px-10 py-3 try_for1 mb-5 text-white">Try for free</button>
+                            <p class="opacity-50">400 GB Storage</p>
+                            <p class="p-3 opacity-50">Unlimited Photos & Videos</p>
+                            <p class="pb-10 opacity-50">Exclusive Support</p>
+                            <p>7-day free trial</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="text-center money_bill">
+                            <h1>Growth Plan</h1>
+                            <br>
+                            <h3 id="price2" class="flex ml-14">
+                                <p class="dolor">$59</p><span class="opacity-50 mt-5">/per month</span>
+                            </h3>
+                            <br>
+                            <h2 class="opacity-50">No credit card required</h2>
+                            <br>
+                            <button class="px-10 py-3 try_for2 mb-5 text-white">Try for free</button>
+                            <p class="opacity-50">400 GB Storage</p>
+                            <p class="p-3 opacity-50">Unlimited Photos & Videos</p>
+                            <p class="pb-10 opacity-50">Exclusive Support</p>
+                            <p>7-day free trial</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="text-center money_bill">
+                            <h1>Business</h1>
+                            <br>
+                            <h3 id="price3" class="flex ml-14">
+                                <p class="dolor">$139</p><span class="opacity-50 mt-5">/per month</span>
+                            </h3>
+                            <br>
+                            <h2 class="opacity-50">No credit card required</h2>
+                            <br>
+                            <button class="px-10 py-3 try_for1 mb-5 text-white">Try for free</button>
+                            <p class="opacity-50">400 GB Storage</p>
+                            <p class="p-3 opacity-50">Unlimited Photos & Videos</p>
+                            <p class="pb-10 opacity-50">Exclusive Support</p>
+                            <p>7-day free trial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+      <div >
+        <div class="Premium text-center">
+          <h1>We Offer Great Affordable Premium Prices.
+           </h1>
+          <h3 class="py-5 opacity-50"> It is a long established fact that a reader will be distracted by the readable content of <br> a page when looking at its layout. The point of using.</h3>
+        </div>
+        <div class="ul_all ">
+          
+
+              <ul class=" ul_four_picture flex flex-wrap text-sm font-medium text-center text-gray-500 ">
+                <li class="me-2">
+                    <a href="#" aria-current="page" class="inline-block p-4  rounded-t-lg active dark:bg-gray-800 dark:text-blue-500">All</a>
+                </li>
+                <li class="me-2">
+                    <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Branding Strategy</a>
+                </li>
+                <li class="me-2">
+                    <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Digital Experience</a>
+                </li>
+                <li class="me-2">
+                    <a href="#" class="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">Ecommerce</a>
+                </li>
+                
+              </ul>
+
+        </div>
+      <div class="image-grid px-10 gap-10">
+        <img src="../images/project-01.png" alt="Image 1">
+        <img src="../images/project-02.png" alt="Image 2">
+        <img src="../images/project-03.png" alt="Image 3">
+        <img src="../images/project-04.png" alt="Image 4">
+      </div>
+    </div>
+      
+    </section>
+    
+    <main></main>
+    <script>
+      
+    </script>
+   
+    <script>
+      const toggle = document.getElementById('toggle-price');
+      const price1 = document.getElementById('price1');
+      const price2 = document.getElementById('price2');
+      const price3 = document.getElementById('price3');
+  
+      toggle.addEventListener('change', function() {
+          if (this.checked) {
+              price1.innerHTML = '<p class="dolor">$149</p><span class="opacity-50 mt-5">/per year</span>';
+              price2.innerHTML = '<p class="dolor">$608</p><span class="opacity-50 mt-5">/per year</span>';
+              price3.innerHTML = '<p class="dolor">$1568</p><span class="opacity-50 mt-5">/per year</span>';
+          } else {
+              price1.innerHTML = '<p class="dolor">$29</p><span class="opacity-50 mt-5">/per month</span>';
+              price2.innerHTML = '<p class="dolor">$59</p><span class="opacity-50 mt-5">/per month</span>';
+              price3.innerHTML = '<p class="dolor">$139</p><span class="opacity-50 mt-5">/per month</span>';
+          }
+      });
+  </script>
+  
+
+    <script>
+      // Đợi cho đến khi tài liệu HTML đã tải xong
+      document.addEventListener("DOMContentLoaded", function () {
+        // Lấy phần tử div cần di chuyển
+        const divElement = document.querySelector(".lelf_to_right");
+
+        // Thiết lập khoảng cách ban đầu từ vị trí bên trái
+        let leftPosition = 0; // Khoảng cách ban đầu tính bằng pixel, tùy chỉnh theo nhu cầu
+
+        // Định nghĩa hàm di chuyển div từ trái sang phải
+        function moveRight() {
+          leftPosition += 2; // Tốc độ di chuyển, tùy chỉnh theo nhu cầu
+          divElement.style.left = leftPosition + "px"; // Thiết lập vị trí left của div
+
+          // Kiểm tra nếu div đã di chuyển đến vị trí cần đến
+          if (leftPosition >= 0) {
+            clearInterval(intervalId); // Dừng hàm setInterval
+          }
+        }
+
+        // Thiết lập hàm setInterval để thực hiện di chuyển div
+        const intervalId = setInterval(moveRight, 10); // Thực hiện di chuyển mỗi 10ms (tùy chỉnh theo nhu cầu)
+      });
+    </script>
+
+    <!-- --------------------------------- left to right -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const divElement = document.querySelector(".lelf_to_right");
+
+        // Thêm class 'active' để kích hoạt hiệu ứng CSS
+        setTimeout(function () {
+          divElement.classList.add("active");
+        }, 100); // Thêm một chút delay để nhìn thấy rõ hiệu ứng
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const divElement = document.querySelector(".nooo_o");
+
+        // Thêm class 'active' để kích hoạt hiệu ứng CSS
+        setTimeout(function () {
+          divElement.classList.add("active");
+        }, 100); // Thêm một chút delay để nhìn thấy rõ hiệu ứng
+      });
+    </script>
+    <!-- -------------------------------- -->
+     
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const featureSection = document.querySelector(".animate_right");
+
+        // Thêm class 'active' để kích hoạt hiệu ứng CSS
+        setTimeout(function () {
+          featureSection.classList.add("active");
+        }, 100); // Thêm một chút delay để nhìn thấy rõ hiệu ứng
+      });
+    
+    </script>
+    <!-- ----------------------------------top to bottom -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const featureSection = document.querySelector(".features");
+
+        // Thêm class 'active' để kích hoạt hiệu ứng CSS
+        setTimeout(function () {
+          featureSection.classList.add("active");
+        }, 100); // Thêm một chút delay để nhìn thấy rõ hiệu ứng
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const featureSection = document.querySelector(".team_and_picture");
+
+        // Thêm class 'active' để kích hoạt hiệu ứng CSS
+        setTimeout(function () {
+          featureSection.classList.add("active");
+        }, 100); // Thêm một chút delay để nhìn thấy rõ hiệu ứng
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const featureSection = document.querySelector(".people_1");
+
+        // Thêm class 'active' để kích hoạt hiệu ứng CSS
+        setTimeout(function () {
+          featureSection.classList.add("active");
+        }, 100); // Thêm một chút delay để nhìn thấy rõ hiệu ứng
+      });
+    </script>
+    <script>
+      // Hiển thị nút khi trượt xuống dưới một đoạn nhất định
+window.onscroll = function() {
+  const scrollButton = document.getElementById('scrollButton');
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollButton.style.display = 'block';
+  } else {
+      scrollButton.style.display = 'none';
+  }
+};
+
+// Khi nhấn vào nút, trượt lên đầu trang
+document.getElementById('scrollButton').addEventListener('click', function() {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Trượt lên mượt mà
+  });
+});
+
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector(".navbar_1");
+    
+        let lastScrollTop = 0; // Vị trí cuộn cuối cùng
+    
+        window.addEventListener("scroll", function () {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (scrollTop > lastScrollTop) {
+                // Cuộn xuống
+                navbar.classList.remove("navbar-hidden");
+                navbar.classList.add("navbar-visible");
+            } else {
+                // Cuộn lên
+                navbar.classList.remove("navbar-visible");
+                navbar.classList.add("navbar-hidden");
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Cập nhật vị trí cuộn cuối cùng
+        });
+    });
+    
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const signInLink = document.querySelector(".btn_header");
+    
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) { // Thay đổi 50px tùy thuộc vào điểm bạn muốn kích hoạt thay đổi màu
+            signInLink.classList.add("scrolled");
+          } else {
+            signInLink.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+      const themeToggleIcon = document.querySelector(".theme-toggle");
+      const body = document.body;
+  
+      themeToggleIcon.addEventListener("click", function () {
+          if (body.classList.contains("light-theme")) {
+              body.classList.remove("light-theme");
+              body.classList.add("dark-theme");
+              themeToggleIcon.classList.remove("fa-sun");
+              themeToggleIcon.classList.add("fa-moon");
+          } else {
+              body.classList.remove("dark-theme");
+              body.classList.add("light-theme");
+              themeToggleIcon.classList.remove("fa-moon");
+              themeToggleIcon.classList.add("fa-sun");
+          }
+      });
+  });
+  </script>
+  <script>
+    
+  </script>
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>

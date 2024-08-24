@@ -2,10 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+body.light-theme {
+  background-color: white;
+  color: black;
+}
 
+body.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+/* Ẩn icon chuyển đổi khi không cần thiết */
+.theme-toggle {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hiệu ứng hover */
+.theme-toggle:hover {
+  color: gray; /* Hoặc bất kỳ màu nào bạn muốn */
+}
 .flex .btn_header{
     border-radius: 17px;
-    border: 1px solid gray;
+  
+}
+ nav {
+
+  top: 0; /* hoặc giá trị phù hợp tùy vào vị trí mong muốn */
+
+ 
+  margin-bottom: 10px;
+  /*z-index: 1000;  đảm bảo nav hiển thị trên các phần tử khác */
+}
+/* CSS để nền hiển thị và ẩn */
+.navbar_1 {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-hidden {
+  background-color: transparent; /* Nền trong suốt khi ẩn */
+  box-shadow: none; /* Không có bóng khi ẩn */
+}
+
+.navbar-visible {
+  background-color: white; /* Nền khi hiện ra */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng nhẹ khi hiện ra */
+}
+
+.moon i{
+  color: grey;
+  
+  border-radius: 50px;
+  padding: 7px;
 }
 /* Cài đặt cơ bản cho menu */
 .menu ul {
@@ -63,18 +111,528 @@
     display: block;
   }
   
+  .btn_header {
+    border: none; /* Loại bỏ đường viền */
+
+    text-decoration: none; /* Loại bỏ gạch chân (nếu có) */
+  }
+  .btn_header {
+    color: white; /* Màu chữ khi ở trạng thái bình thường */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+  }
+  
+  .btn_header.scrolled {
+    color: gray; /* Màu chữ khi cuộn xuống */
+  }
+  
   .menu .dropdown-menus li a:hover {
     background-color: #f1f1f1;
   }
-  
+  .scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background-color: #5a5adc; /* Màu xanh */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Bo tròn các cạnh */
+    cursor: pointer;
+    display: none; /* Ẩn nút lúc đầu */
+    z-index: 1000;
+    text-align: center;
+    line-height: 50px; /* Căn giữa chữ theo chiều dọc */
+}
+
+
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.icon_play {
+  position: relative;
+  z-index: 2; /* Đảm bảo hình ảnh nằm trên hiệu ứng */
+  width: 50px; /* Kích thước của icon, điều chỉnh tùy ý */
+  height: 50px;
+}
+
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%; /* Tăng kích thước lan rộng */
+  height: 200%;
+  background-color: rgba(52, 104, 224, 0.6); /* Màu sắc đậm hơn và độ trong suốt */
+  border-radius: 50%; /* Bo tròn hiệu ứng */
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: 1; /* Đảm bảo hiệu ứng nằm dưới icon */
+  animation: ripple-effect 2s infinite; /* Điều chỉnh thời gian hiệu ứng */
+}
+
+@keyframes ripple-effect {
+  0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 1;
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1.5); /* Tăng kích thước lan rộng */
+      opacity: 0;
+  }
+}
+
   /* Style caret */
   .caret {
-    font-size: 0.7em;
+    font-size: 17px;
     margin-left: 5px;
-  }
   
+  }
+  button {
+    border: none;
+  }
   .menu .dropdown a {
     display: flex;
     align-items: center;
   }
+.header_menus {
+  margin-right: 20px;
+}
+/* ---------------------------- */
+/* lelf_to_right */
+
+
+.lelf_to_right {
+  position: relative; /* Đảm bảo phần tử có thể di chuyển */
+  opacity: 0; /* Ban đầu ẩn phần tử */
+  transform: translateX(-100%); /* Di chuyển phần tử ra khỏi màn hình về phía trái */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Thêm hiệu ứng chuyển động */
+}
+.lelf_to_right.active {
+  transform: translateX(0); /* Di chuyển phần tử vào đúng vị trí */
+  opacity: 1; /* Hiển thị phần tử */
+}
+
+/* right to lèt  */
+.animate_right {
+  position: relative;
+  opacity: 0;
+  transform: translateX(100%); /* Bắt đầu ngoài màn hình phía bên phải */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Thêm hiệu ứng chuyển động */
+}
+
+.animate_right.active {
+  transform: translateX(0); /* Di chuyển vào vị trí ban đầu trên màn hình */
+  opacity: 1; /* Hiển thị phần tử */
+}
+
+
+/* -------------------------------- */
+/* ----------------------------------- */
+/* top_to_bottom */
+
+.features {
+  position: relative; /* Đảm bảo phần tử có thể di chuyển */
+  opacity: 0; /* Ban đầu ẩn phần tử */
+  transform: translateY(-100%); /* Di chuyển phần tử ra khỏi màn hình về phía trên */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Thêm hiệu ứng chuyển động */
+}
+
+.features.active {
+  transform: translateY(0); /* Di chuyển phần tử vào đúng vị trí */
+  opacity: 1; /* Hiển thị phần tử */
+}
+/* ------------------------------------- */
+
+.team_and_picture {
+  position: relative; /* Đảm bảo phần tử có thể di chuyển */
+  opacity: 0; /* Ban đầu ẩn phần tử */
+  transform: translateY(-100%); /* Di chuyển phần tử ra khỏi màn hình về phía trên */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Thêm hiệu ứng chuyển động */
+}
+
+.team_and_picture.active {
+  transform: translateY(0); /* Di chuyển phần tử vào đúng vị trí */
+  opacity: 1; /* Hiển thị phần tử */
+}
+.people_1 {
+  position: relative; /* Đảm bảo phần tử có thể di chuyển */
+  opacity: 0; /* Ban đầu ẩn phần tử */
+  transform: translateY(-100%); /* Di chuyển phần tử ra khỏi màn hình về phía trên */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Thêm hiệu ứng chuyển động */
+}
+
+.people_1.active {
+  transform: translateY(0); /* Di chuyển phần tử vào đúng vị trí */
+  opacity: 1; /* Hiển thị phần tử */
+}
+.people {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+.image-container {
+  position: relative;
+  overflow: hidden; /* Ensure overlay does not overflow the image */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: transparent; /* Initially transparent */
+  transform: translateY(100%); /* Initially hidden (translated off the screen) */
+  transition: transform 0.5s ease;
+}
+
+.overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3468e0; /* Blue */
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 60%);
+  /* Blue section starting at full height on the left and decreasing to 80% on the right */
+}
+
+.overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff007f; /* Pink */
+  clip-path: polygon(0% 30%, 0% 100%, 100% 100%, 100% 30%); 
+}
+
+.image-container:hover .overlay {
+  transform: translateY(0); /* Display overlay on hover */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative; /* Ensure icons are above the overlay */
+  z-index: 1;
+}
+
+.icon {
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #ff007f; /* Pink on hover */
+}
+
+
+
+
+
+
+  .show {
+    display: flex;
+    align-items: center; /* Canh giữa các phần tử theo chiều dọc */
+    justify-content: space-between; /* Đẩy nội dung sang trái và hình ảnh sang phải */
+    
+    gap: 20px; /* Khoảng cách giữa nội dung và hình ảnh */
+}
+
+.show > div:first-child {
+    flex: 1; /* Chiếm toàn bộ không gian bên trái */
+}
+
+.image-container {
+    
+    width: auto; /* Đảm bảo kích thước container phù hợp với nội dung */
+    height: auto; /* Đảm bảo container có kích thước phù hợp */
+    flex-shrink: 0; /* Ngăn container bị co lại */
+}
+
+/* .shape_4, .hero_4 {
+   
+    top: 0;
+    left: 0;
+} */
+.get_started{
+  background-color: rgb(78 107 255);
+  border-radius: 50px;
+  margin-left: 30px;
+}
+.call_phone{
+  font-size: 22px;
+}
+.shape_4 {
+  position: relative;
+    z-index: 1; /* Ảnh này sẽ nằm dưới */
+ 
+  align-items: left;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  height: auto;
+ 
+}
+
+.hero_4 {
+  position: absolute;
+  z-index: 2; /* Ảnh này sẽ nằm trên */
+  top: 0;
+  right: 0;
+  align-items: left;
   
+ 
+ 
+}
+.h1_show{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+/* ------------------------------- */
+.features{
+  display: flex;
+}
+.features img{
+  margin-left: 20px;
+}
+.icon_1 img{
+background-color: palevioletred;
+border-radius: 50px;
+padding: 25px;
+}
+.icon_2 img{
+  background-color: rgb(24, 108, 24);
+  border-radius: 50px;
+  padding: 25px;
+  }
+.icon_3 img{
+    background-color: orange;
+    border-radius: 50px;
+    padding: 25px;
+}
+.h4_icon{
+margin-left: 30px;
+}
+.h4_iconn{
+  margin-left: 30px;
+  font-size: 30px;
+  }
+  /* ------------------------ */
+.study{
+  margin-top: 100px;
+}
+.nuatrons{
+  align-items: center;
+  margin-top: 20px;
+}
+.animate_left{
+  position: relative;
+}
+.shape_6{
+  position: absolute;
+  left: -1.5rem;
+  top: 10px;
+}
+.animate_left img .nuatron{
+
+    height: auto;
+}
+.animate_right{
+  margin-top: 170px;
+}
+.why_choise{
+  font-size: 25px;
+  color: rgb(54, 21, 170);
+}
+.we_make{
+  font-size: 40px;
+}
+.icon_play{
+  background-color: blue;
+  padding: 14px;
+  border-radius: 50px;
+
+}
+.animate_right{
+  margin-left: 80px;
+}
+.nooo_o {
+  position: relative; /* Đảm bảo phần tử có thể di chuyển */
+  opacity: 0; /* Ban đầu ẩn phần tử */
+  transform: translateX(-100%); /* Di chuyển phần tử ra khỏi màn hình về phía trái */
+  transition: transform 1s ease-out, opacity 1s ease-out; /* Thêm hiệu ứng chuyển động */
+}
+.nooo_o.active{
+  transform: translateX(0); /* Di chuyển phần tử vào đúng vị trí */
+  opacity: 1; /* Hiển thị phần tử */
+}
+/* ---------------------------------- */
+.h1_grid{
+  font-size: 25px;
+}
+.h3_grid{
+  font-size: 18px;
+
+}
+.h1_offer{
+  font-size: 27px;
+}
+.great{
+  background-image: url('../images/shape-13.svg');
+  background-color: rgb(245, 247, 248);
+  background-repeat: none;
+  background-size: cover;
+}
+.label_1{
+  margin-left: 70px;
+}
+.h3_it{
+  font-size: 20px;
+}
+.label_1 img{
+ padding-left: 120px;
+ margin-bottom: 30px;
+}
+.h1_great{
+  margin-left: 12%;
+  margin-top: 40px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.pc_great img{
+  margin-left: 150px;
+}
+.team_three{
+  background-image: url('../images/shape-08.svg');
+background-color: rgb(245, 247, 248);
+background-repeat: none;
+background-size: cover;
+margin-top: 50px;
+
+
+}
+.h1_size{
+  font-size: 30px;
+}
+.meet_with{
+  font-size: 30px;
+  font-weight: bold;
+}
+.dolor_sit{
+  margin-left: 20%;
+  font-size: 17px;
+}
+/* CSS */
+.tamgiac {
+    /* Kích thước và các thuộc tính khác của hình ảnh */
+    width: 100px; /* Thay đổi kích thước theo cần thiết */
+    height: auto; /* Đảm bảo tỷ lệ khung hình bảo toàn */
+    /* Phần quay vòng tròn */
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.circle{
+  margin-left: 20%;
+}
+.people_1{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.try_for1{
+  background-color: rgb(228, 131, 147);
+  border-radius: 50px;
+}
+.try_for2{
+  background-color: rgb(64, 92, 234);
+  border-radius: 50px; 
+}
+.money_bill{
+  background-color:white;
+  border-radius: 10px;
+  padding: 70px;
+}
+.money_bill h1{
+  font-size: 24px;
+  font-weight: 600;
+}
+.dolor{
+  font-weight: bold;
+  font-size: 40px;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+  gap: 20px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.image-grid img:nth-child(1) {
+  grid-column: 1 / 2; /* First column */
+  grid-row: 1 / 2;    /* First row */
+}
+
+.image-grid img:nth-child(2) {
+  grid-column: 2 / 3; /* Second column */
+  grid-row: 1 / 2;    /* First row */
+}
+
+.image-grid img:nth-child(3) {
+  grid-column: 1 / 3; /* Span across first and second columns */
+  grid-row: 2 / 2;    /* Second row */
+}
+
+.image-grid img:nth-child(4) {
+  grid-column: 3 / 4; /* Third column */
+  grid-row: 1 / 3;    /* First row */
+}
+.ul_four_picture{
+  margin-left: 26%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.Premium h1{
+  padding-top: 90px;
+font-size: 30px;
+font-weight: 500;
+}
+.Premium h3{
+  font-size: 20px;
+}
+.ul_all ul li{
+  font-size: 18px;
+}
