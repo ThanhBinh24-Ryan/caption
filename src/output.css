@@ -2460,7 +2460,7 @@ button {
 }
 
 .great{
-  background-image: url('../images/shape-13.svg');
+  background-image: url('./images/shape-13.svg');
   background-color: rgb(245, 247, 248);
   background-repeat: none;
   background-size: cover;
@@ -2491,7 +2491,7 @@ button {
 }
 
 .team_three{
-  background-image: url('../images/shape-08.svg');
+  background-image: url('./images/shape-08.svg');
   background-color: rgb(245, 247, 248);
   background-repeat: none;
   background-size: cover;
