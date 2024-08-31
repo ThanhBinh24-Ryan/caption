@@ -2634,6 +2634,66 @@ button {
   font-size: 18px;
 }
 
+body.light-theme .great,
+body.light-theme .team_three {
+  background-color: rgb(245, 247, 248);
+  /* Nền gốc của theme sáng */
+}
+
+body.dark-theme .great,
+body.dark-theme .team_three {
+  background-color: rgba(2, 25, 61, 0.5);
+  /* Nền của theme tối */
+  color: white;
+  /* Tùy chọn: Thay đổi màu chữ để dễ nhìn trên nền tối */
+}
+
+body.light-theme .money_bill {
+  background-color: white;
+  /* Màu nền của theme sáng */
+}
+
+body.dark-theme .money_bill {
+  background-color:  rgba(7, 24, 52, 0.5);
+  /* Màu nền của theme tối */
+  color: white;
+  /* Tùy chọn: Thay đổi màu chữ để dễ nhìn trên nền tối */
+}
+
+body.light-theme #price-toggle-label span {
+  color: rgb(60, 60, 60);
+  /* Màu chữ của theme sáng, có thể là màu đen hoặc xám đậm */
+}
+
+body.dark-theme #price-toggle-label span {
+  color: white;
+  /* Màu chữ của theme tối */
+}
+
+body.light-theme .header_menus {
+  color: black;
+  /* Màu chữ của theme sáng */
+}
+
+body.dark-theme .header_menus {
+  color: white;
+  /* Màu chữ của theme tối */
+}
+
+body.dark-theme nav {
+  background-color: transparent;
+  /* Nền trong suốt khi không cuộn */
+  transition: background-color 0.3s ease;
+  /* Hiệu ứng chuyển màu mượt mà */
+}
+
+nav.scrolled {
+  background-color: black;
+  /* Nền đen khi cuộn xuống */
+}
+
+/* Hiệu ứng ban đầu của phần tử */
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -3025,3 +3085,5 @@ button {
   --tw-translate-x: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
+
