@@ -498,7 +498,7 @@ margin-left: 30px;
   font-size: 27px;
 }
 .great{
-  background-image: url('../images/shape-13.svg');
+  background-image: url('./images/shape-13.svg');
   background-color: rgb(245, 247, 248);
   background-repeat: none;
   background-size: cover;
@@ -523,7 +523,7 @@ margin-left: 30px;
   margin-left: 150px;
 }
 .team_three{
-  background-image: url('../images/shape-08.svg');
+  background-image: url('./images/shape-08.svg');
 background-color: rgb(245, 247, 248);
 background-repeat: none;
 background-size: cover;
